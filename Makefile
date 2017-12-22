@@ -1,4 +1,12 @@
-BROWSER_REMOTE=(chromium --headless --disable-gpu --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222)
+BROWSER_REMOTE=(chromium-browser \
+	--headless \
+	--disable-gpu \
+	--remote-debugging-address=127.0.0.1 \
+	--remote-debugging-port=9222 \
+	)
+
+GENERATE_RESUME=(go run resume.go -resume=$@.yaml -output=output/$@)
+CONVERT_PDF_TO_PNG=(convert -density 500 output/$@.pdf[0] output/$@.png)
 
 .PHONY: start stop example resume
 
@@ -10,11 +18,11 @@ stop:
 	kill `cat remote.PID` && rm remote.PID
 
 example: start
-	go run resume.go
-	convert -density 500 output/example.pdf output/example.png
+	$(GENERATE_RESUME)
+	$(CONVERT_PDF_TO_PNG)
 	$(MAKE) stop
 
 resume: start
-	go run resume.go -resume=resume.yaml -output=output/resume
-	convert -density 500 output/resume.pdf output/resume.png
+	$(GENERATE_RESUME)
+	$(CONVERT_PDF_TO_PNG)
 	$(MAKE) stop
