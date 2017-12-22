@@ -327,11 +327,13 @@
                   {{- with .Description}}
                     <span class="entry-description">{{.}}</span>
                   {{- end}}
+                  <ul>
                   {{- range .Details}}
                     <span class="entry-detail">
-                      <span>- {{.}}</span>
+                      <span><li>{{.}}</li></span>
                     </span>
                   {{- end}}
+                  </ul>
                 </div>
               {{- end}}
             </div>
