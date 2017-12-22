@@ -304,15 +304,6 @@
               {{- range .Entries}}
                 <div class="content-entry">
                   <div class="entry-header">
-                    {{- with .Where}}
-                      <span class="entry-where">{{.}}</span>
-                    {{- end}}
-                    {{- with .Location}}
-                      <span class="entry-location">{{.}}</span>
-                    {{- end}}
-                    {{- with .When}}
-                      <span class="entry-when">{{.}}</span>
-                    {{- end}}
                     {{- $url := .URL }}
                     {{- with .What}}
                       <span class="entry-what">
@@ -324,6 +315,15 @@
                         </a>
                       {{- end}}
                       </span>
+                    {{- end}}
+                    {{- with .When}}
+                      <span class="entry-when">{{.}}</span>
+                    {{- end}}
+                    {{- with .Where}}
+                      <span class="entry-where">{{.}}</span>
+                    {{- end}}
+                    {{- with .Location}}
+                      <span class="entry-location">{{.}}</span>
                     {{- end}}
                   </div>
                   {{- with .Description}}
