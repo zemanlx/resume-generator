@@ -210,13 +210,13 @@ func defaultPrintToPDFParams() *printToPDFParams {
 		DisplayHeaderFooter: false,
 		PrintBackground:     true,
 		Scale:               1.0,
-		PaperWidth:          8.5,
-		PaperHeight:         11.0,
+		PaperWidth:          8.27,
+		PaperHeight:         11.69,
 		MarginTop:           0.0,
 		MarginBottom:        0.0,
 		MarginLeft:          0.0,
 		MarginRight:         0.0,
-		PageRanges:          "",
+		PageRanges:          "1",
 	}
 }
 
