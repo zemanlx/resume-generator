@@ -6,7 +6,7 @@ BROWSER_REMOTE=(chromium-browser \
 	)
 
 GENERATE_RESUME=(go run resume.go -resume=$@.yaml -output=output/$@)
-CONVERT_PDF_TO_PNG=(convert -density 500 output/$@.pdf[0] output/$@.png)
+CONVERT_PDF_TO_PNG=(convert -density 500 -define profile:skip=ICC output/$@.pdf[0] output/$@.png)
 
 .PHONY: start stop example resume
 
