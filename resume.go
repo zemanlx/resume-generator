@@ -212,10 +212,10 @@ func defaultPrintToPDFParams() *printToPDFParams {
 		Scale:               1.0,
 		PaperWidth:          8.27,
 		PaperHeight:         11.69,
-		MarginTop:           0.0,
-		MarginBottom:        0.0,
-		MarginLeft:          0.0,
-		MarginRight:         0.0,
+		MarginTop:           0.4,
+		MarginBottom:        0.8,
+		MarginLeft:          0.4,
+		MarginRight:         0.4,
 		PageRanges:          "1-2",
 	}
 }
