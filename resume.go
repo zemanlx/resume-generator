@@ -216,7 +216,7 @@ func defaultPrintToPDFParams() *printToPDFParams {
 		MarginBottom:        0.0,
 		MarginLeft:          0.0,
 		MarginRight:         0.0,
-		PageRanges:          "1",
+		PageRanges:          "1-2",
 	}
 }
 
